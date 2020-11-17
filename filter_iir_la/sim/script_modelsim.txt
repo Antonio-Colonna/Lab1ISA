@@ -1,0 +1,34 @@
+----------script modelsim --------------
+
+
+#!/bin/bash
+#
+# Script to setup environment for Modeltech Modelsim (Linux)
+#
+echo
+echo "Initializing environment..."
+echo
+INSTALL_DIR=/software/mentor/modelsim_6.2g
+export PATH=$INSTALL_DIR/linux:$PATH
+#export LM_LICENSE_FILE=1717@vlsiwall.polito.it
+export LM_LICENSE_FILE=1717@led-x3850-3.polito.it
+echo
+echo "The tool can be started with the command 'vsim'"
+echo
+
+
+---------------------------------------
+vcom -93 -work ./work ../src/flipflop.vhd
+vcom -93 -work ./work ../src/register_d.vhd
+vcom -93 -work ./work ../src/moltiplicatore.vhdl
+vcom -93 -work ./work ../src/sottrattore.vhdl
+vcom -93 -work ./work ../src/sommatore.vhdl
+vcom -93 -work ./work ../src/filter_iir.vhd
+vcom -93 -work ./work ../tb/clk_gen.vhd
+vcom -93 -work ./work ../tb/data_maker_new.vhd
+vcom -93 -work ./work ../tb/data_sink.vhd
+
+vlog -work ./work ../tb/tb_iir.v
+
+vsim work work.tb_iir
+

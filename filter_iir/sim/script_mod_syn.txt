@@ -1,0 +1,43 @@
+----------script modelsim --------------
+
+
+#!/bin/bash
+#
+# Script to setup environment for Modeltech Modelsim (Linux)
+#
+echo
+echo "Initializing environment..."
+echo
+INSTALL_DIR=/software/mentor/modelsim_6.2g
+export PATH=$INSTALL_DIR/linux:$PATH
+#export LM_LICENSE_FILE=1717@vlsiwall.polito.it
+export LM_LICENSE_FILE=1717@led-x3850-3.polito.it
+echo
+echo "The tool can be started with the command 'vsim'"
+echo
+
+--------------------------------------------------
+
+
+vcom -93 -work ./work ../tb/clk_gen.vhd
+vcom -93 -work ./work ../tb/data_maker_new.vhd
+vcom -93 -work ./work ../tb/data_sink.vhd
+vlog -work ./work ../netlist/filter_iir.v
+vlog -work ./work ../tb/tb_iir.v
+
+vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../netlist/filter_iir.sdf work.tb_iir
+
+vcd file ../vcd/filter_iir.vcd
+vcd add /tb_iir/UUT/*
+
+run 3 us
+
+andare nella cartella syn ed eseguire script synopsys
+vcd2saif -input ../vcd/filter_iir.vcd -output ../saif/filter_iir.saif
+
+dc_shell-xg-t
+read_verilog -netlist ../netlist/filter_iir.v
+read_saif -input ../saif/filter_iir.saif -instance tb_iir/UUT -unit ns -scale 1
+create_clock -name MY_CLK clk
+
+report_power
