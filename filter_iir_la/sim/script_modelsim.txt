@@ -1,6 +1,5 @@
 ----------script modelsim --------------
 
-
 #!/bin/bash
 #
 # Script to setup environment for Modeltech Modelsim (Linux)
