@@ -1,0 +1,112 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : filter_iir
+Version: O-2018.06-SP4
+Date   : Mon Nov  2 09:39:38 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: a2[1] (input port clocked by MY_CLK)
+  Endpoint: reg_dout/Q_reg[7]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  filter_iir         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  a2[1] (in)                                              0.00       0.50 f
+  molt_a2/d2[1] (moltiplicatore_N8_4)                     0.00       0.50 f
+  molt_a2/mult_23/b[1] (moltiplicatore_N8_4_DW_mult_tc_0)
+                                                          0.00       0.50 f
+  molt_a2/mult_23/U174/ZN (INV_X1)                        0.04       0.54 r
+  molt_a2/mult_23/U189/Z (XOR2_X1)                        0.08       0.63 r
+  molt_a2/mult_23/U186/ZN (OAI22_X1)                      0.05       0.67 f
+  molt_a2/mult_23/U37/S (HA_X1)                           0.08       0.75 f
+  molt_a2/mult_23/U175/ZN (INV_X1)                        0.03       0.78 r
+  molt_a2/mult_23/U199/ZN (OAI222_X1)                     0.06       0.84 f
+  molt_a2/mult_23/U198/ZN (AOI222_X1)                     0.10       0.93 r
+  molt_a2/mult_23/U165/ZN (INV_X1)                        0.03       0.96 f
+  molt_a2/mult_23/U197/ZN (AOI222_X1)                     0.11       1.07 r
+  molt_a2/mult_23/U196/ZN (OAI222_X1)                     0.07       1.13 f
+  molt_a2/mult_23/U9/CO (FA_X1)                           0.10       1.23 f
+  molt_a2/mult_23/U8/CO (FA_X1)                           0.09       1.32 f
+  molt_a2/mult_23/U7/CO (FA_X1)                           0.09       1.41 f
+  molt_a2/mult_23/U6/CO (FA_X1)                           0.09       1.50 f
+  molt_a2/mult_23/U5/CO (FA_X1)                           0.09       1.59 f
+  molt_a2/mult_23/U4/CO (FA_X1)                           0.09       1.68 f
+  molt_a2/mult_23/U3/CO (FA_X1)                           0.09       1.77 f
+  molt_a2/mult_23/U177/Z (XOR2_X1)                        0.07       1.84 f
+  molt_a2/mult_23/U176/ZN (XNOR2_X1)                      0.06       1.90 f
+  molt_a2/mult_23/product[14] (moltiplicatore_N8_4_DW_mult_tc_0)
+                                                          0.00       1.90 f
+  molt_a2/d1d2[7] (moltiplicatore_N8_4)                   0.00       1.90 f
+  sum_fb/input2[7] (sommatore_N8_0)                       0.00       1.90 f
+  sum_fb/add_18/B[7] (sommatore_N8_0_DW01_add_0)          0.00       1.90 f
+  sum_fb/add_18/U1_7/S (FA_X1)                            0.15       2.05 r
+  sum_fb/add_18/SUM[7] (sommatore_N8_0_DW01_add_0)        0.00       2.05 r
+  sum_fb/output[7] (sommatore_N8_0)                       0.00       2.05 r
+  sot_w/input2[7] (sottrattore_N8)                        0.00       2.05 r
+  sot_w/sub_18/B[7] (sottrattore_N8_DW01_sub_0)           0.00       2.05 r
+  sot_w/sub_18/U4/ZN (INV_X1)                             0.02       2.07 f
+  sot_w/sub_18/U2_7/S (FA_X1)                             0.18       2.25 r
+  sot_w/sub_18/DIFF[7] (sottrattore_N8_DW01_sub_0)        0.00       2.25 r
+  sot_w/output[7] (sottrattore_N8)                        0.00       2.25 r
+  molt_b0/d1[7] (moltiplicatore_N8_1)                     0.00       2.25 r
+  molt_b0/mult_23/a[7] (moltiplicatore_N8_1_DW_mult_tc_0)
+                                                          0.00       2.25 r
+  molt_b0/mult_23/U257/Z (XOR2_X1)                        0.08       2.33 r
+  molt_b0/mult_23/U256/ZN (NAND2_X1)                      0.06       2.39 f
+  molt_b0/mult_23/U223/ZN (OAI22_X1)                      0.07       2.47 r
+  molt_b0/mult_23/U31/S (HA_X1)                           0.09       2.55 r
+  molt_b0/mult_23/U29/S (FA_X1)                           0.13       2.68 f
+  molt_b0/mult_23/U9/CO (FA_X1)                           0.10       2.78 f
+  molt_b0/mult_23/U8/CO (FA_X1)                           0.09       2.87 f
+  molt_b0/mult_23/U7/CO (FA_X1)                           0.09       2.96 f
+  molt_b0/mult_23/U6/CO (FA_X1)                           0.09       3.05 f
+  molt_b0/mult_23/U5/CO (FA_X1)                           0.09       3.15 f
+  molt_b0/mult_23/U4/CO (FA_X1)                           0.09       3.24 f
+  molt_b0/mult_23/U3/CO (FA_X1)                           0.09       3.33 f
+  molt_b0/mult_23/U178/Z (XOR2_X1)                        0.07       3.39 f
+  molt_b0/mult_23/U177/ZN (XNOR2_X1)                      0.06       3.46 f
+  molt_b0/mult_23/product[14] (moltiplicatore_N8_1_DW_mult_tc_0)
+                                                          0.00       3.46 f
+  molt_b0/d1d2[7] (moltiplicatore_N8_1)                   0.00       3.46 f
+  sum_y/input1[7] (sommatore_N8_1)                        0.00       3.46 f
+  sum_y/add_18/A[7] (sommatore_N8_1_DW01_add_0)           0.00       3.46 f
+  sum_y/add_18/U1_7/S (FA_X1)                             0.14       3.60 r
+  sum_y/add_18/SUM[7] (sommatore_N8_1_DW01_add_0)         0.00       3.60 r
+  sum_y/output[7] (sommatore_N8_1)                        0.00       3.60 r
+  reg_dout/D[7] (register_d_N8_1)                         0.00       3.60 r
+  reg_dout/U17/ZN (NAND2_X1)                              0.03       3.62 f
+  reg_dout/U16/ZN (OAI21_X1)                              0.03       3.66 r
+  reg_dout/Q_reg[7]/D (DFFR_X1)                           0.01       3.66 r
+  data arrival time                                                  3.66
+
+  clock MY_CLK (rise edge)                               13.16      13.16
+  clock network delay (ideal)                             0.00      13.16
+  clock uncertainty                                      -0.07      13.09
+  reg_dout/Q_reg[7]/CK (DFFR_X1)                          0.00      13.09 r
+  library setup time                                     -0.04      13.05
+  data required time                                                13.05
+  --------------------------------------------------------------------------
+  data required time                                                13.05
+  data arrival time                                                 -3.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.39
+
+
+1
